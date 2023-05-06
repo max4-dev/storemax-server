@@ -7,6 +7,8 @@ import { registerValidation, loginValidation, goodsValidation } from './validati
 import { UserController, GoodsController } from './controllers/index.js';
 import { chechAuth, checkIsAdmin, handleValidationErrors } from './utils/index.js';
 
+//mongodb+srv://maksimBogomyakov:www.storemax123@cluster0.mxkipny.mongodb.net/store?retryWrites=true&w=majority
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -54,7 +56,7 @@ app.post('/goods', GoodsController.create);
 app.delete('/goods/:id', checkIsAdmin, GoodsController.remove);
 app.patch('/goods/:id', checkIsAdmin, handleValidationErrors, GoodsController.update);
 
-app.listen(4444, (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
     console.log(err);
   }
