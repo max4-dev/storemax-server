@@ -8,8 +8,6 @@ import { registerValidation, loginValidation, goodsValidation } from './validati
 import { UserController, GoodsController } from './controllers/index.js';
 import { chechAuth, checkIsAdmin, handleValidationErrors } from './utils/index.js';
 
-//mongodb+srv://maksimBogomyakov:www.storemax123@cluster0.mxkipny.mongodb.net/store?retryWrites=true&w=majority
-
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
