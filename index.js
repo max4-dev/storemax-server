@@ -73,7 +73,7 @@ app.post('/upload', checkIsAdmin, upload.single('image'), async (req, res) => {
 
   try {
     const fileInfo = await uploadFileToB2(bucketName, fileName, filePath);
-    const fileUrl = `https://f001.backblazeb2.com/file/${bucketName}/${fileInfo.data.fileName}`;
+    const fileUrl = `https://f003.backblazeb2.com/file/${bucketName}/${fileInfo.data.fileName}`;
     res.json({ url: fileUrl });
   } catch (error) {
     console.log(error);
